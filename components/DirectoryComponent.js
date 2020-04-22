@@ -9,14 +9,14 @@ function Directory(props) {
             <ListItem
                 title={item.name}
                 subtitle={item.description}
-                leftAvatar={{ source: require('./images/boatclub.png')}}
+                leftAvatar={{ source: require('./images/classof1970.jpeg')}}
             />
         );
     };
 
     return (
         <FlatList 
-            data={props.campsites}
+            data={props.locations}
             renderItem={renderDirectoryItem}
             keyExtractor={item => item.id.toString()}
         />

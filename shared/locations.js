@@ -1,5 +1,4 @@
-export const LOCATIONS = 
-[
+export const LOCATIONS = [
     {
         id: 0,
         name: "Kankakee Valley Boat Club",
