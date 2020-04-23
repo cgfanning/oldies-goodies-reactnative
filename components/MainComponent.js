@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
 import LocationInfo from './LocationInfoComponent';
-import { LOCATIONS } from '../shared/locations';
-import { View } from 'react-native';
+import { View, Platform  } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
+
+const DirectoryNavigator = createStackNavigator(
+    {
+        Directory: { screen: Directory },
+        LocationInfo: { screen: LocationInfo }
+    },
+    {
+        initialRouteName: 'Directory',
+        navigationOptions: {
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            }
+        }
+    }
+);//end DirectoryNavigator
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          locations: LOCATIONS,
-          selectedLocation: null
-        };
-    }
-
-    onLocationSelect(locationId) {
-        this.setState({selectedLocation:locationId});
-    }
-
     render() {
         return (
-            <View style = {{flex:1}}>
-                <Directory locations = {this.state.locations} onPress = {locationid => this.onLocationSelect(locationid)}
-                />
-                <LocationInfo location = {this.state.locations.filter(location => location.id === this.state.selectedLocation)[0]}
-                />
+            <View style = {{ flex:1, paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight }}>
+                <DirectoryNavigator />
             </View>
-        );
-    }
-}
+        );//end return
+    }//end render
+}//end class Main
 
 export default Main;
