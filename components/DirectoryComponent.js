@@ -13,7 +13,7 @@ class Directory extends Component {
 
     static navigationOptions = {
         title: 'Directory'
-    };
+    };//end navigationOption
 
     render() {
         const { navigate } = this.props.navigation;
@@ -25,16 +25,16 @@ class Directory extends Component {
                     onPress = {() => navigate('LocationInfo', { locationId: item.id })}
                     leftAvatar={{ source: require('./images/boatclub.png')}}
                 />
-            );
-        };
+            );//end return
+        };//end renderDirectoryItem
 
         return (
             <FlatList 
                 data = {this.state.locations}
-                renderItem = { renderDirectoryItem}
-                keyExtractor = {item => item.id.toString()}
+                renderItem = { renderDirectoryItem }
+                keyExtractor = { item => item.id }
             />
-        );
+        );//end render
     }//end render
 }//end class Directory
 

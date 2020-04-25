@@ -29,12 +29,12 @@ class Home extends Component {
             locations: LOCATIONS,
             questions: QUESTIONS,
             appetizers: APPETIZERS
-        };
-    }
+        };//end state
+    }//end constructor
 
     static navigationOptions = {
         title: 'Home'
-    }
+    }//end navigationOptions
 
     render() {
         return (
@@ -46,8 +46,8 @@ class Home extends Component {
                 <RenderItem 
                     item={this.state.appetizers.filter(appetizer => appetizer.featured)[0]} />
             </ScrollView>
-        );
-    }
-}
+        );//end return
+    }//end render
+}//end class Home
 
 export default Home;
