@@ -7,13 +7,13 @@ function Mission() {
     return (
         <Card>
             <Text>
-                Something about the reunion here
+                Something about the food options
             </Text>
         </Card>
     );//end return
 }//end function Mission
 
-class About extends Component {
+class Appetizer extends Component {
 
     constructor(props) {
         super(props);
@@ -23,7 +23,7 @@ class About extends Component {
     }//end constructor
 
     static navigationOptions = {
-        title: 'About Us'
+        title: 'Appetizers'
     };//end navigationOptions
 
     render() {//leave scrollview empty for task 1
@@ -42,7 +42,7 @@ class About extends Component {
             <ScrollView> 
                 <Mission />
 
-                <Card title = 'Community Partners'>
+                <Card title = 'Order Appetizers'>
                     <FlatList 
                         data = {this.state.appetizers}
                         renderItem = { renderAppetizer }
@@ -54,4 +54,4 @@ class About extends Component {
     }//end render
 }//end class About
 
-export default About;
+export default Appetizer;
