@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, FlatList } from 'react-native';
 import { Card, ListItem } from 'react-native-elements';
-import { APPETIZERS } from '../shared/appetizers';
+import { QUESTIONS } from '../shared/questions';
 
 function Announce() {
     return (
@@ -13,22 +13,22 @@ function Announce() {
     );//end return
 }//end function Announce
 
-class Appetizer extends Component {
+class FAQ extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {//change this to partners
-            appetizers: APPETIZERS
+        this.state = {
+            questions: QUESTIONS
         };//end state
     }//end constructor
 
     static navigationOptions = {
-        title: 'Appetizers'
+        title: 'Questions'
     };//end navigationOptions
 
     render() {//leave scrollview empty for task 1
 
-        const renderAppetizer = ({item}) => {
+        const renderQuestion = ({item}) => {
             return (
                 <ListItem
                         title = {item.name}
@@ -42,16 +42,16 @@ class Appetizer extends Component {
             <ScrollView> 
                 <Announce />
 
-                <Card title = 'Order Appetizers'>
+                <Card title = 'FAQ'>
                     <FlatList 
-                        data = {this.state.appetizers}
-                        renderItem = { renderAppetizer }
+                        data = {this.state.questions}
+                        renderItem = { renderQuestion }
                         keyExtractor = {item => item.id.toString()}
                     />
                 </Card>
             </ScrollView>
         );//end return
     }//end render
-}//end class About
+}//end class FAQ
 
-export default Appetizer;
+export default FAQ;

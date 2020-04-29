@@ -4,10 +4,34 @@ import Directory from './DirectoryComponent';
 import LocationInfo from './LocationInfoComponent';
 import Appetizer from './AppetizerComponent';
 import Contact from './ContactComponent';
+import FAQ from './FAQComponent';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
+
+const HomeNavigator = createStackNavigator(
+    {
+        Home: { screen: Home }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='home'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);//end HomeNavigator
 
 const DirectoryNavigator = createStackNavigator(
     {
@@ -38,32 +62,9 @@ const DirectoryNavigator = createStackNavigator(
     }
 );//end DirectoryNavigator
 
-const HomeNavigator = createStackNavigator(
-    {
-        Home: { screen: Home }
-    },
-    {
-        navigationOptions: ({navigation}) => ({
-            headerStyle: {
-                backgroundColor: '#5637DD'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-                color: '#fff'
-            },
-            headerLeft: <Icon
-                name='home'
-                type='font-awesome'
-                iconStyle={styles.stackIcon}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        })
-    }
-);//end HomeNavigator
-
 const AppetizerNavigator = createStackNavigator(
     {
-        Home: { screen: Appetizer }
+        Appetizer: { screen: Appetizer }
     },
     {
         navigationOptions: ({navigation}) => ({
@@ -86,7 +87,30 @@ const AppetizerNavigator = createStackNavigator(
 
 const ContactNavigator = createStackNavigator(
     {
-        Home: { screen: Contact }
+        Contact: { screen: Contact }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='address-card'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);//end Contact Navigator
+
+const FAQNavigator = createStackNavigator(
+    {
+        FAQ: { screen: FAQ }
     },
     {
         navigationOptions: ({navigation}) => ({
@@ -153,6 +177,20 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },//end Directory screen navigation options
+        FAQ: {
+            screen: FAQNavigator,
+            navigationOptions: {
+                drawerLabel: 'FAQ',
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='address-card'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },//end FAQ screen navigation options
         About: {
             screen: AppetizerNavigator,
             navigationOptions: {
