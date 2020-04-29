@@ -5,6 +5,7 @@ import LocationInfo from './LocationInfoComponent';
 import Appetizer from './AppetizerComponent';
 import Contact from './ContactComponent';
 import FAQ from './FAQComponent';
+import RSVP from './RSVPComponent';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -76,7 +77,7 @@ const AppetizerNavigator = createStackNavigator(
                 color: '#fff'
             },
             headerLeft: <Icon
-                name='info-circle'
+                name='cutlery'
                 type='font-awesome'
                 iconStyle={styles.stackIcon}
                 onPress={() => navigation.toggleDrawer()}
@@ -122,7 +123,7 @@ const FAQNavigator = createStackNavigator(
                 color: '#fff'
             },
             headerLeft: <Icon
-                name='address-card'
+                name='info-circle'
                 type='font-awesome'
                 iconStyle={styles.stackIcon}
                 onPress={() => navigation.toggleDrawer()}
@@ -130,6 +131,29 @@ const FAQNavigator = createStackNavigator(
         })
     }
 );//end Contact Navigator
+
+const RSVPNavigator = createStackNavigator(
+    {
+        RSVP: { screen: RSVP }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='reply'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);//end Contact RSVP
 
 const CustomDrawerContentComponent = props => (
     <ScrollView>
@@ -183,7 +207,7 @@ const MainNavigator = createDrawerNavigator(
                 drawerLabel: 'FAQ',
                 drawerIcon: ({tintColor}) => (
                     <Icon
-                        name='address-card'
+                        name='info-circle'
                         type='font-awesome'
                         size={24}
                         color={tintColor}
@@ -191,13 +215,27 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },//end FAQ screen navigation options
+        RSVP: {
+            screen: RSVPNavigator,
+            navigationOptions: {
+                drawerLabel: 'RSVP',
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='reply'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },//end RSVP screen navigation options
         About: {
             screen: AppetizerNavigator,
             navigationOptions: {
                 drawerLabel: 'Appetizers',
                 drawerIcon: ({tintColor}) => (
                     <Icon
-                        name='info-circle'
+                        name='cutlery'
                         type='font-awesome'
                         size={24}
                         color={tintColor}

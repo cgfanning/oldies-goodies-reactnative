@@ -17,16 +17,13 @@ class Contact extends Component {
         return (//task 2 the whole Card
             <ScrollView>
                 <Card title = "Your Reunion Committee" wrapperStyle = {{margin:20}}>
-                    <Text>
-                        Holly Schneider Gott {"\n"}
-                        Phone: 406-425-3444 {"\n"}
-                        {"\n"}{"\n"}
-                        Jean Busse Patterson {"\n"}
-                        Linda Koch Lincoln {"\n"}
-                        Sharon Miller Crevier {"\n"}
-                        Ann Schierhold Harms {"\n"}
-                        Patrice Steele Macken {"\n"}
-                    </Text>
+                    <Text>Holly Schneider Gott</Text>
+                    <Text>Phone: 406-425-3444</Text>
+                    <Text>Jean Busse Patterson</Text>
+                    <Text>Linda Koch Lincoln</Text>
+                    <Text>Sharon Miller Crevier</Text>
+                    <Text>Ann Schierhold Harms</Text>
+                    <Text>Patrice Steele Macken</Text>
                 </Card>
             </ScrollView>
         );//end return

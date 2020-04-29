@@ -23,10 +23,10 @@ class FAQ extends Component {
     }//end constructor
 
     static navigationOptions = {
-        title: 'Questions'
+        title: 'FAQ'
     };//end navigationOptions
 
-    render() {//leave scrollview empty for task 1
+    render() {
 
         const renderQuestion = ({item}) => {
             return (
