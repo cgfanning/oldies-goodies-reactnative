@@ -18,7 +18,7 @@ const HomeNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: 'blue'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -53,7 +53,7 @@ const DirectoryNavigator = createStackNavigator(
         initialRouteName: 'Directory',
         navigationOptions: {
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: 'blue'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -70,7 +70,7 @@ const AppetizerNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: 'blue'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -93,7 +93,7 @@ const ContactNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: 'blue'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -116,7 +116,7 @@ const FAQNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: 'blue'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -139,7 +139,7 @@ const RSVPNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: 'blue'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -259,7 +259,7 @@ const MainNavigator = createDrawerNavigator(
         }//end Contact screen navigation options
     },
     {
-        drawerBackgroundColor: '#CEC8FF',
+        drawerBackgroundColor: '#c0c0c0',
         contentComponent: CustomDrawerContentComponent
     }
 );//end MainNavigator
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     drawerHeader: {
-        backgroundColor: '#5637DD',
+        backgroundColor: 'blue',
         height: 140,
         alignItems: 'center',
         justifyContent: 'center',
