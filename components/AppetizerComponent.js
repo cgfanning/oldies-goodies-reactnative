@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, FlatList } from 'react-native';
-import { Card, ListItem } from 'react-native-elements';
+import { Card, ListItem, PricingCard } from 'react-native-elements';
 import { APPETIZERS } from '../shared/appetizers';
 
 function Announce() {
     return (
         <Card>
-            <Text>
-                Something about the food options
-            </Text>
+            <Text style = {{textAlign: 'center'}}>Order your appetizers here!</Text>
         </Card>
     );//end return
 }//end function Announce
@@ -17,7 +15,7 @@ class Appetizer extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {//change this to partners
+        this.state = {
             appetizers: APPETIZERS
         };//end state
     }//end constructor
@@ -26,15 +24,18 @@ class Appetizer extends Component {
         title: 'Appetizers'
     };//end navigationOptions
 
-    render() {//leave scrollview empty for task 1
+    render() {
 
         const renderAppetizer = ({item}) => {
             return (
-                <ListItem
+                <Card>
+                    <PricingCard
                         title = {item.name}
-                        subtitle = {item.description}
-                        leftAvatar = {{ source: require('./images/boatclub.png')}}
-                />
+                        price = {item.price}
+                        button = {{title: 'Order'}}
+                        image = {item.image}
+                    />
+                </Card>
             );//end return
         };
 
@@ -42,7 +43,7 @@ class Appetizer extends Component {
             <ScrollView> 
                 <Announce />
 
-                <Card title = 'Order Appetizers'>
+                <Card>
                     <FlatList 
                         data = {this.state.appetizers}
                         renderItem = { renderAppetizer }
