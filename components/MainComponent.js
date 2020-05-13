@@ -146,7 +146,7 @@ const RSVPNavigator = createStackNavigator(
                 color: '#fff'
             },
             headerLeft: <Icon
-                name='reply'
+                name='star'
                 type='font-awesome'
                 iconStyle={styles.stackIcon}
                 onPress={() => navigation.toggleDrawer()}
@@ -221,7 +221,7 @@ const MainNavigator = createDrawerNavigator(
                 drawerLabel: 'RSVP',
                 drawerIcon: ({tintColor}) => (
                     <Icon
-                        name='reply'
+                        name='star'
                         type='font-awesome'
                         size={24}
                         color={tintColor}
