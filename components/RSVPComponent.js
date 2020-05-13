@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Modal, Button, StyleSheet, Switch, Alert } from 'react-native';
-import { Card, Text, Input } from 'react-native-elements';
+import { Card, Text, Input, CheckBox } from 'react-native-elements';
 
 function Announce() {
     return (
@@ -45,28 +45,14 @@ class RSVP extends Component {
         this.setState({
             firstname: '',
             lastname: '',
+            checked: false,
             guest: false,
             phone: '',
             email: '',
             comments: '',
             showModal: false
         });
-    }//end handleRSVP
-
-    handleYes() {
-        this.toggleModal();
-        this.resetForm();
-    }
-
-    handleNo() {
-        Alert.alert('We will miss you!');
-        this.resetForm();
-    }
-
-    handleNo() {
-        Alert.alert('Please confirm Yes or No as soon as possible.');
-        this.resetForm();
-    }
+    }//end resetForm
 
     render() {
         return (
@@ -76,26 +62,15 @@ class RSVP extends Component {
                 <View>
                     <Text style = {styles.formLabel}>Will You Attend?</Text>
                     <View style = {{margin: 10}}>
-                        <Button
-                            title = 'Yes!'
-                            color = '#808080'
-                            onPress = {() => {
-                                this.handleYes();
-                            }}
+                        <CheckBox
+                            title = 'Count Me In!'
+                            checked = {this.state.checked}
+                            onPress = {() => this.setState({checked: !this.setState.checked})}
                         />
-                        <Button
-                            title = 'No'
-                            color = '#808080'
-                            onPress = {() => {
-                                this.handleNo();
-                            }}
-                        />
-                        <Button
-                            title = 'Maybe'
-                            color = '#808080'
-                            onPress = {() => {
-                                this.handleMaybe();
-                            }}
+                        <CheckBox
+                            title = "Can't Make It"
+                            checked = {this.state.checked}
+                            onPress = {() => this.setState({checked: !this.setState.checked})}
                         />
                     </View>
                     <Input
