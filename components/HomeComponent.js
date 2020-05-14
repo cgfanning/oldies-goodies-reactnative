@@ -54,6 +54,6 @@ const styles = StyleSheet.create({
         width: 350,
         backgroundColor: "#002633"
     }
-})
+})//end StyleSheet
 
 export default Home;

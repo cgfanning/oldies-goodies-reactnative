@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, FlatList, StyleSheet } from 'react-native';
-import { Card, ListItem } from 'react-native-elements';
+import { View, Text, ScrollView, StyleSheet, Image, Button, Alert } from 'react-native';
+import { Card } from 'react-native-elements';
 import { APPETIZERS } from '../shared/appetizers';
 
 function Announce() {
@@ -10,6 +10,13 @@ function Announce() {
         </Card>
     );//end return
 }//end function Announce
+
+function RenderAppetizer() {
+    return (
+        <ScrollView>
+        </ScrollView>
+    );
+}//end renderAppetizer
 
 class Appetizer extends Component {
 
@@ -24,29 +31,74 @@ class Appetizer extends Component {
         title: 'Appetizers'
     };//end navigationOptions
 
+    handleOrder() {
+        Alert.alert(
+            "Order Received"
+        )
+    }//end handleOrder
+
+
     render() {
-
-        const renderAppetizer = ({item}) => {
-            return (
-                <ListItem
-                        title = {item.name}
-                        subtitle = {item.description}
-                        leftAvatar = {{ source: require('./images/invitestar.png')}}
-                />
-            );//end return
-        };//end renderAppetizer
-
         return (
             <ScrollView  style={{backgroundColor: '#fff9e6', flex:1}}> 
                 <Announce />
 
-                <Card>
-                    <FlatList 
-                        data = {this.state.appetizers}
-                        renderItem = { renderAppetizer }
-                        keyExtractor = {item => item.id.toString()}
-                    />
-                </Card>
+                <Card style = {styles.cardStyle}>
+                <View>
+                    <Image source={require('./images/calamariprice.jpg')} style = {styles.image}/>
+                    <View style = {{margin: 10}}>
+                        <Button
+                            title = 'Add to Order'
+                            color = '#002633'
+                            onPress = {() => {
+                               this.handleOrder();
+                            }}
+                        />
+                    </View>
+                </View>
+            </Card>
+            <Card>
+                <View>
+                    <Image source={require('./images/mozzsticksprice.jpg')} style = {styles.image}/>
+                    <View style = {{margin: 10}}>
+                        <Button
+                            title = 'Add to Order'
+                            color = '#002633'
+                            onPress = {() => {
+                                this.handleOrder();
+                            }}
+                        />
+                    </View>
+                </View>
+            </Card>
+            <Card>
+                <View>
+                    <Image source={require('./images/wingsprice.jpg')} style = {styles.image}/>
+                    <View style = {{margin: 10}}>
+                        <Button
+                            title = 'Add to Order'
+                            color = '#002633'
+                            onPress = {() => {
+                                this.handleOrder();
+                            }}
+                        />
+                    </View>
+                </View>
+            </Card>
+            <Card>
+                <View>
+                    <Image source={require('./images/pizzaprice.jpg')} style = {styles.image}/>
+                    <View style = {{margin: 10}}>
+                        <Button
+                            title = 'Add to Order'
+                            color = '#002633'
+                            onPress = {() => {
+                                this.handleOrder();
+                            }}
+                        />
+                    </View>
+                </View>
+            </Card>
             </ScrollView>
         );//end return
     }//end render
@@ -56,9 +108,15 @@ const styles = StyleSheet.create({
     pageText: {
         textAlign: 'center',
         fontSize: 18
+    },
+    image: {
+        height: 280,
+        width: 350,
+        backgroundColor: "#002633"
+    },
+    cardStyle: {
+        backgroundColor: "#002633"
     }
 });//end styleSheet
-
-
 
 export default Appetizer;
