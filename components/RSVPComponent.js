@@ -93,7 +93,7 @@ class RSVP extends Component {
                         value = {this.state.lastname}
                     />
                     <View style = {styles.formRow}>
-                        <Text style = {styles.formLabel}>Bring a Guest?</Text>
+                        <Text style = {styles.formLabel}>Bringing a Guest?</Text>
                         <Switch
                             style = {styles.formItem}
                             value = {this.state.guest}

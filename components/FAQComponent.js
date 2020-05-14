@@ -33,7 +33,7 @@ class FAQ extends Component {
                 <ListItem
                         title = {item.name}
                         subtitle = {item.description}
-                        leftAvatar = {{ source: require('./images/boatclub.png')}}
+                        leftAvatar = {{ source: require('./images/raiderblue.png')}}
                 />
             );//end return
         };
