@@ -36,7 +36,7 @@ class FAQ extends Component {
                         leftAvatar = {{ source: require('./images/invitestar.png')}}
                 />
             );//end return
-        };
+        };//end renderQuestion
 
         return (
             <ScrollView  style={{backgroundColor: '#fff9e6', flex:1}}> 

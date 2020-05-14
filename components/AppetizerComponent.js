@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, FlatList, StyleSheet } from 'react-native';
-import { Card, ListItem, PricingCard } from 'react-native-elements';
+import { Card, ListItem } from 'react-native-elements';
 import { APPETIZERS } from '../shared/appetizers';
 
 function Announce() {
@@ -28,16 +28,13 @@ class Appetizer extends Component {
 
         const renderAppetizer = ({item}) => {
             return (
-                <Card style = {styles.pageText}>
-                    <PricingCard
+                <ListItem
                         title = {item.name}
-                        price = {item.price}
-                        button = {{title: 'Order'}}
-                        image = {item.image}
-                    />
-                </Card>
+                        subtitle = {item.description}
+                        leftAvatar = {{ source: require('./images/invitestar.png')}}
+                />
             );//end return
-        };
+        };//end renderAppetizer
 
         return (
             <ScrollView  style={{backgroundColor: '#fff9e6', flex:1}}> 
@@ -61,5 +58,7 @@ const styles = StyleSheet.create({
         fontSize: 18
     }
 });//end styleSheet
+
+
 
 export default Appetizer;
