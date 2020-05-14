@@ -21,6 +21,8 @@ class RSVP extends Component {
             firstname: '',
             lastname: '',
             guest: false,
+            checkbox1: false,
+            checkbox2: false,
             phone: '',
             email: '',
             comments: '',
@@ -45,7 +47,8 @@ class RSVP extends Component {
         this.setState({
             firstname: '',
             lastname: '',
-            checked: false,
+            checkbox1: false,
+            checkbox2: false,
             guest: false,
             phone: '',
             email: '',
@@ -64,13 +67,13 @@ class RSVP extends Component {
                     <View style = {{margin: 10}}>
                         <CheckBox
                             title = 'Count Me In!'
-                            checked = {this.state.checked}
-                            onPress = {() => this.setState({checked: !this.setState.checked})}
+                            checked = {this.state.checkbox1}
+                            onPress = {() => this.setState({checkbox1: !this.setState.checkbox1})}
                         />
                         <CheckBox
                             title = "Can't Make It"
-                            checked = {this.state.checked}
-                            onPress = {() => this.setState({checked: !this.setState.checked})}
+                            checked = {this.state.checkbox2}
+                            onPress = {() => this.setState({checkbox2: !this.setState.checkbox2})}
                         />
                     </View>
                     <Input
