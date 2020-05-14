@@ -6,8 +6,8 @@ import { QUESTIONS } from '../shared/questions';
 function Announce() {
     return (
         <Card>
-            <Text>
-                Something about the food options
+            <Text style = {{textAlign: 'center'}}>
+                We know you may have many questions about attending our reunion. These are just a few that we hear the most. Feel free to send an email through our Contact page if you need other answers.
             </Text>
         </Card>
     );//end return
@@ -33,7 +33,7 @@ class FAQ extends Component {
                 <ListItem
                         title = {item.name}
                         subtitle = {item.description}
-                        leftAvatar = {{ source: require('./images/raiderblue.png')}}
+                        leftAvatar = {{ source: require('./images/invitestar.png')}}
                 />
             );//end return
         };

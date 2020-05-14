@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet } from 'react-native';
+import { View, ScrollView, Image, StyleSheet } from 'react-native';
 import { Card } from 'react-native-elements';
 import { LOCATIONS } from '../shared/locations';
 import { QUESTIONS } from '../shared/questions';

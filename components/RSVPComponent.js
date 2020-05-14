@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Modal, Button, StyleSheet, Switch, Alert } from 'react-native';
+import { ScrollView, View, Image, Button, StyleSheet, Switch } from 'react-native';
 import { Card, Text, Input, CheckBox } from 'react-native-elements';
 
 function Announce() {
     return (
         <Card>
-            <Text style = {{textAlign: 'center'}}>Join us for our</Text>
-            <Text style = {{textAlign: 'center'}}>50th Class Reunion!</Text>
-        </Card>
+                <View>
+                    <Image source={require('./images/invite.png')} style = {styles.image}/>
+                </View>
+            </Card>
     );//end return
 }//end function Announce
 
@@ -26,7 +27,6 @@ class RSVP extends Component {
             phone: '',
             email: '',
             comments: '',
-            showModal: true
         }
     }//end constructor
 
@@ -34,13 +34,8 @@ class RSVP extends Component {
         title: 'RSVP'
     };//end navigationOptions
 
-    toggleModal() {
-        this.setState({showModal: !this.state.showModal});
-    }//end toggleModal
-
     handleRSVP() {
         console.log(JSON.stringify(this.state));
-        this.toggleModal();
     }//end handleRSVP
 
     resetForm() {
@@ -62,7 +57,7 @@ class RSVP extends Component {
             <ScrollView  style={{backgroundColor: '#fff9e6', flex:1}}>
                 <Announce />
 
-                <View>
+                <Card>
                     <Text style = {styles.formLabel}>Will You Attend?</Text>
                     <View style = {{margin: 10}}>
                         <CheckBox
@@ -134,34 +129,9 @@ class RSVP extends Component {
                             }}
                         />
                     </View>
-                </View>
-{/*                <View>
-                    <Modal
-                        transparent = {false}
-                        visible = {this.state.ShowModal}
-                        onRequestClose = {() => this.toggleModal()}>
-                        <View style = {styles.modal}>
-                            <Text style = {styles.modalTitle}>Your RSVP</Text>
-                            <Text style = {styles.modalText}>First Name: {this.state.firstname}</Text>
-                            <Text style = {styles.modalText}>Last Name: {this.state.lastname}</Text>
-                            <Text style = {styles.modalText}>Bring a Guest?: {this.state.guest ? 'Yes' : 'No'}</Text>
-                            <Text style = {styles.modalText}>Phone: {this.state.phone}</Text>
-                            <Text style = {styles.modalText}>Email: {this.state.email}</Text>
-                            <Text style = {styles.modalText}>Comments: {this.state.comments}</Text>
-                            <Button
-                                onPress = {() => {
-                                    this.toggleModal();
-                                    this.resetForm();
-                                }}
-                                color = '#5637DD'
-                                title = 'Close'
-                            />
-                        </View>
-                    </Modal>
-                </View>
-                            */}
+                </Card>
             </ScrollView>
-        );
+        );//end return
     }//end render
 }//end class RSVP
 
@@ -183,21 +153,10 @@ const styles = StyleSheet.create({
     formItem: {
         flex: 1
     },
-    modal: { 
-        justifyContent: 'center',
-        margin: 20
-    },
-    modalTitle: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        backgroundColor: '#5637DD',
-        textAlign: 'center',
-        color: '#fff',
-        marginBottom: 20
-    },
-    modalText: {
-        fontSize: 18,
-        margin: 10
+    image: {
+        height: 280,
+        width: 350,
+        backgroundColor: "#002633"
     }
 });//end StyleSheet
 
