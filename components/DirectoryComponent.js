@@ -33,6 +33,7 @@ class Directory extends Component {
                 data = {this.state.locations}
                 renderItem = { renderDirectoryItem }
                 keyExtractor = { item => item.id }
+                style={{backgroundColor: '#fff9e6', flex:1}}
             />
         );//end render
     }//end render

@@ -40,7 +40,7 @@ class Appetizer extends Component {
         };
 
         return (
-            <ScrollView> 
+            <ScrollView  style={{backgroundColor: '#fff9e6', flex:1}}> 
                 <Announce />
 
                 <Card>

@@ -15,7 +15,7 @@ class Contact extends Component {
 
     render() {
         return (//task 2 the whole Card
-            <ScrollView>
+            <ScrollView  style={{backgroundColor: '#fff9e6', flex:1}}>
                 <Card title = "Your Reunion Committee" wrapperStyle = {{margin:20}}>
                     <Text style = {{textAlign: 'center'}}>Holly Schneider Gott</Text>
                     <Text style = {{marginBottom:10, textAlign: 'center'}}>Phone: 406-425-3444</Text>

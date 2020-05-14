@@ -18,9 +18,9 @@ const HomeNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: 'blue'
+                backgroundColor: '#002633'
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#e69d00',
             headerTitleStyle: {
                 color: '#fff'
             },
@@ -53,7 +53,7 @@ const DirectoryNavigator = createStackNavigator(
         initialRouteName: 'Directory',
         navigationOptions: {
             headerStyle: {
-                backgroundColor: 'blue'
+                backgroundColor: '#002633'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -70,7 +70,7 @@ const AppetizerNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: 'blue'
+                backgroundColor: '#002633'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -93,7 +93,7 @@ const ContactNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: 'blue'
+                backgroundColor: '#002633'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -116,7 +116,7 @@ const FAQNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: 'blue'
+                backgroundColor: '#002633'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -139,7 +139,7 @@ const RSVPNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: 'blue'
+                backgroundColor: '#002633'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -259,7 +259,7 @@ const MainNavigator = createDrawerNavigator(
         }//end Contact screen navigation options
     },
     {
-        drawerBackgroundColor: '#c0c0c0',
+        drawerBackgroundColor: '#fff9e6',
         contentComponent: CustomDrawerContentComponent
     }
 );//end MainNavigator
@@ -267,7 +267,7 @@ const MainNavigator = createDrawerNavigator(
 class Main extends Component {
     render() {
         return (
-            <View style={{flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight}}>
+            <View style={styles.main}>
                 <MainNavigator />
             </View>
         );//end return
@@ -278,8 +278,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    main: {
+        backgroundColor: '#fff9e6', 
+        flex: 1, 
+        paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight
+    },
     drawerHeader: {
-        backgroundColor: 'blue',
+        backgroundColor: '#002633',
         height: 140,
         alignItems: 'center',
         justifyContent: 'center',

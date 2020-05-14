@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet } from 'react-native';
 import { Card } from 'react-native-elements';
 import { LOCATIONS } from '../shared/locations';
 import { QUESTIONS } from '../shared/questions';
 import { APPETIZERS } from '../shared/appetizers';
 
-function RenderItem({item}) {
-    if (item) {
-        return (
-            <Card 
-                featuredTitle = {item.name}
-                image = {require ('./images/raiderblue.png')}>
-                <Text
-                    style = {{margin: 10}}>
-                    {item.description}
-                </Text>
+
+function Announce() {
+    return (
+        <ScrollView>
+            <Card>
+                <View>
+                    <Image source={require('./images/invite.png')} style = {styles.image}/>
+                </View>
             </Card>
-        );//end return
-    }
-    return <View />;
-}//end RenderItem
+            <Card>
+                <View style = {styles.image}>
+                    <Image source={require('./images/seniorsrsvp.jpg')} style = {styles.image}/>
+                </View>
+            </Card>
+        </ScrollView>
+);//end return
+}//end function Announce
 
 class Home extends Component {
 
@@ -38,16 +40,20 @@ class Home extends Component {
 
     render() {
         return (
-            <ScrollView>
-                <RenderItem 
-                    item={this.state.locations.filter(location => location.featured)[0]} />
-                <RenderItem 
-                    item={this.state.questions.filter(question => question.featured)[0]} />
-                <RenderItem 
-                    item={this.state.appetizers.filter(appetizer => appetizer.featured)[0]} />
+            <ScrollView style={{backgroundColor: '#fff9e6', flex:1}}>
+                <Announce />
+
             </ScrollView>
         );//end return
     }//end render
 }//end class Home
+
+const styles = StyleSheet.create({
+    image: {
+        height: 280,
+        width: 350,
+        backgroundColor: "#002633"
+    }
+})
 
 export default Home;

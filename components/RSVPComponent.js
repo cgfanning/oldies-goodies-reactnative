@@ -59,7 +59,7 @@ class RSVP extends Component {
 
     render() {
         return (
-            <ScrollView>
+            <ScrollView  style={{backgroundColor: '#fff9e6', flex:1}}>
                 <Announce />
 
                 <View>
