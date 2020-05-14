@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { LOCATIONS } from '../shared/locations';
 
@@ -20,16 +20,18 @@ class Directory extends Component {
         const renderDirectoryItem = ({item}) => {
             return (
                 <ListItem
-                    title={item.name}
-                    subtitle={item.description}
+                    style = {styles.pageText}
+                    title = {item.name}
+                    subtitle = {item.description}
                     onPress = {() => navigate('LocationInfo', { locationId: item.id })}
-                    leftAvatar={{ source: require('./images/boatclub.png')}}
+                    leftAvatar = {{ source: require('./images/boatclub.png')}}
                 />
             );//end return
         };//end renderDirectoryItem
 
         return (
             <FlatList 
+                style = {styles.pageText}
                 data = {this.state.locations}
                 renderItem = { renderDirectoryItem }
                 keyExtractor = { item => item.id }
@@ -38,5 +40,12 @@ class Directory extends Component {
         );//end render
     }//end render
 }//end class Directory
+
+const styles = StyleSheet.create({
+    pageText: {
+        textAlign: 'center',
+        fontSize: 18
+    }
+});//end styleSheet
 
 export default Directory;

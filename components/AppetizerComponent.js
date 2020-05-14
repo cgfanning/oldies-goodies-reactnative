@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, FlatList } from 'react-native';
+import { Text, ScrollView, FlatList, StyleSheet } from 'react-native';
 import { Card, ListItem, PricingCard } from 'react-native-elements';
 import { APPETIZERS } from '../shared/appetizers';
 
@@ -28,7 +28,7 @@ class Appetizer extends Component {
 
         const renderAppetizer = ({item}) => {
             return (
-                <Card>
+                <Card style = {styles.pageText}>
                     <PricingCard
                         title = {item.name}
                         price = {item.price}
@@ -54,5 +54,12 @@ class Appetizer extends Component {
         );//end return
     }//end render
 }//end class About
+
+const styles = StyleSheet.create({
+    pageText: {
+        textAlign: 'center',
+        fontSize: 18
+    }
+});//end styleSheet
 
 export default Appetizer;
