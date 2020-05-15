@@ -8,7 +8,7 @@ function RenderLocation({location}) {
         return (
             <Card
                 featuredTitle = {location.name}
-                image = {require('./images/raiderblue.png')}>
+                image = {require('./images/boatclub.png')}>
                 <Text style = {styles.pageText}>
                     {location.description}
                 </Text>

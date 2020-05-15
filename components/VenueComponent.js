@@ -20,11 +20,10 @@ class Venue extends Component {
         const renderVenueItem = ({item}) => {
             return (
                 <ListItem
-                    style = {styles.pageText}
                     title = {item.name}
                     subtitle = {item.description}
                     onPress = {() => navigate('LocationInfo', { locationId: item.id })}
-                    leftAvatar = {{ source: require('./images/boatclub.png')}}
+                    leftAvatar = {{ source: require('./images/invitestar.png')}}
                 />
             );//end return
         };//end renderDirectoryItem
