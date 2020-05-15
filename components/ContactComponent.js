@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, StyleSheet } from 'react-native';
 import { Card, Button, Icon } from 'react-native-elements';
-
+import * as MailComposer from 'expo-mail-composer';
 
 class Contact extends Component {
 
@@ -12,6 +12,14 @@ class Contact extends Component {
     static navigationOptions = {
         title: 'Contact Us'
     };//end navigationOptions
+
+    sendMail() {
+        MailComposer.composeAsync({
+            recipients: ['holly@eastridgereunion.co'],
+            subject: 'Inquiry',
+            body: 'Reunion Committee:'
+        })
+    }//end sendMail
 
     render() {
         return (
@@ -29,6 +37,7 @@ class Contact extends Component {
                             color = '#fff'
                             iconStyle = {{marginRight: 10}}
                         />}
+                        onPress = {() => this.sendMail()}
                     />
                     <Text style = {styles.pageText}>Jean Busse Patterson</Text>
                     <Text style = {styles.pageText}>Linda Koch Lincoln</Text>

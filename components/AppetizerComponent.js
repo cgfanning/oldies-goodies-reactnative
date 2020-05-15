@@ -6,7 +6,8 @@ import { APPETIZERS } from '../shared/appetizers';
 function Announce() {
     return (
         <Card>
-            <Text style = {{textAlign: 'center'}}>Order your appetizers here!</Text>
+            <Text style = {{textAlign: 'center'}}>Order appetizers delivered from our kitchen to your table. 
+                This page will be active for your use on Saturday, September 12.</Text>
         </Card>
     );//end return
 }//end function Announce
@@ -32,9 +33,7 @@ class Appetizer extends Component {
     };//end navigationOptions
 
     handleOrder() {
-        Alert.alert(
-            "Order Received"
-        )
+        Alert.alert("Order Received")
     }//end handleOrder
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Image, Button, StyleSheet, Switch } from 'react-native';
+import { ScrollView, View, Image, Button, StyleSheet, Switch, Alert } from 'react-native';
 import { Card, Text, Input, CheckBox } from 'react-native-elements';
 
 function Announce() {
@@ -26,7 +26,6 @@ class RSVP extends Component {
             checkbox2: false,
             phone: '',
             email: '',
-            comments: '',
         }
     }//end constructor
 
@@ -35,7 +34,7 @@ class RSVP extends Component {
     };//end navigationOptions
 
     handleRSVP() {
-        console.log(JSON.stringify(this.state));
+        Alert.alert("Thank you for sending your RSVP.")
     }//end handleRSVP
 
     resetForm() {
@@ -47,7 +46,6 @@ class RSVP extends Component {
             guest: false,
             phone: '',
             email: '',
-            comments: '',
             showModal: false
         });
     }//end resetForm
@@ -111,13 +109,6 @@ class RSVP extends Component {
                         leftIconContainerStyle = {{ paddingRight: 15 }}
                         onChangeText = {(value) => this.setState({ email: value })}
                         value = {this.state.email}
-                    />
-                    <Input
-                        placeholder = 'Comments'
-                        leftIcon = {{ type: 'font-awesome', name: 'comment' }}
-                        leftIconContainerStyle = {{ paddingRight: 15 }}
-                        onChangeText = {(value) => this.setState({ comments: value })}
-                        value = {this.state.comments}
                     />
                     <View style = {{margin: 10}}>
                         <Button
