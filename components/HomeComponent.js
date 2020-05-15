@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Image, StyleSheet, Animated } from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Animated, Easing } from 'react-native';
 import { Card } from 'react-native-elements';
 import { LOCATIONS } from '../shared/locations';
 import { QUESTIONS } from '../shared/questions';
@@ -45,7 +45,9 @@ class Home extends Component {
             this.state.scaleValue,
             {
                 toValue: 1,
-                duration: 1200
+                duration: 7000,
+                easing: Easing.elastic(1),
+                useNativeDriver: true
             }
         ).start();
     }//end animate
