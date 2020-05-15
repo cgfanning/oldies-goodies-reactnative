@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Image, StyleSheet } from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Animated } from 'react-native';
 import { Card } from 'react-native-elements';
 import { LOCATIONS } from '../shared/locations';
 import { QUESTIONS } from '../shared/questions';
@@ -15,12 +15,17 @@ function Announce() {
                 </View>
             </Card>
             <Card>
-                <View style = {styles.image}>
+                <View>
+                    <Image source={require('./images/gatherings.jpg')} style = {styles.image}/>
+                </View>
+            </Card>
+            <Card>
+                <View>
                     <Image source={require('./images/seniorsrsvp.jpg')} style = {styles.image}/>
                 </View>
             </Card>
         </ScrollView>
-);//end return
+    );//end return
 }//end function Announce
 
 class Home extends Component {
@@ -30,9 +35,24 @@ class Home extends Component {
         this.state = {
             locations: LOCATIONS,
             questions: QUESTIONS,
-            appetizers: APPETIZERS
+            appetizers: APPETIZERS,
+            scaleValue: new Animated.Value(0)
         };//end state
     }//end constructor
+
+    animate() {
+        Animated.timing(
+            this.state.scaleValue,
+            {
+                toValue: 1,
+                duration: 1200
+            }
+        ).start();
+    }//end animate
+
+    componentDidMount() {
+        this.animate();
+    }//end componentDidMount
 
     static navigationOptions = {
         title: 'Home'
@@ -40,10 +60,9 @@ class Home extends Component {
 
     render() {
         return (
-            <ScrollView style={{backgroundColor: '#fff9e6', flex:1}}>
+            <Animated.ScrollView style={{transform: [{scale: this.state.scaleValue}], backgroundColor: '#fff9e6', flex:1}}>
                 <Announce />
-
-            </ScrollView>
+            </Animated.ScrollView>
         );//end return
     }//end render
 }//end class Home

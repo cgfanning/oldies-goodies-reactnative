@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Linking } from 'react-native';
 import { Card } from 'react-native-elements';
 import { LOCATIONS } from '../shared/locations';
 
@@ -11,6 +11,10 @@ function RenderLocation({location}) {
                 image = {require('./images/boatclub.png')}>
                 <Text style = {styles.pageText}>
                     {location.description}
+                </Text>
+                <Text style = {styles.linkText}
+                    onPress = {() => Linking.openURL(`${location.url}`)}>
+                    Click to visit site
                 </Text>
             </Card>
         );
@@ -42,6 +46,12 @@ const styles = StyleSheet.create({
     pageText: {
         textAlign: 'center',
         fontSize: 18
+    },
+    linkText: {
+        textAlign: 'center',
+        fontSize: 18,
+        color: 'blue',
+        textDecorationLine: 'underline'
     }
 });//end styleSheet
 
