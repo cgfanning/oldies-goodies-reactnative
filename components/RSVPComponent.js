@@ -122,7 +122,7 @@ class RSVP extends Component {
                     <View style = {{margin: 10}}>
                         <Button
                             title = 'Submit RSVP'
-                            color = '#808080'
+                            color = '#002633'
                             onPress = {() => {
                                 this.handleRSVP();
                                 this.resetForm();

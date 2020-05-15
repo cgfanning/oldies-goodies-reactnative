@@ -3,7 +3,7 @@ import { FlatList, StyleSheet } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { LOCATIONS } from '../shared/locations';
 
-class Directory extends Component {
+class Venue extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,12 +12,12 @@ class Directory extends Component {
     }//end constructor
 
     static navigationOptions = {
-        title: 'Directory'
+        title: 'Venue'
     };//end navigationOption
 
     render() {
         const { navigate } = this.props.navigation;
-        const renderDirectoryItem = ({item}) => {
+        const renderVenueItem = ({item}) => {
             return (
                 <ListItem
                     style = {styles.pageText}
@@ -33,13 +33,13 @@ class Directory extends Component {
             <FlatList 
                 style = {styles.pageText}
                 data = {this.state.locations}
-                renderItem = { renderDirectoryItem }
+                renderItem = { renderVenueItem }
                 keyExtractor = { item => item.id }
                 style={{backgroundColor: '#fff9e6', flex:1}}
             />
         );//end render
     }//end render
-}//end class Directory
+}//end class Venue
 
 const styles = StyleSheet.create({
     pageText: {
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
     }
 });//end styleSheet
 
-export default Directory;
+export default Venue;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
-import Directory from './DirectoryComponent';
+import Venue from './VenueComponent';
 import LocationInfo from './LocationInfoComponent';
 import Appetizer from './AppetizerComponent';
 import Contact from './ContactComponent';
@@ -34,10 +34,10 @@ const HomeNavigator = createStackNavigator(
     }
 );//end HomeNavigator
 
-const DirectoryNavigator = createStackNavigator(
+const VenueNavigator = createStackNavigator(
     {
-        Directory: {
-            screen: Directory,
+        Venue: {
+            screen: Venue,
             navigationOptions: ({navigation}) => ({
                 headerLeft: <Icon
                     name='list'
@@ -50,7 +50,7 @@ const DirectoryNavigator = createStackNavigator(
         LocationInfo: { screen: LocationInfo }
     },
     {
-        initialRouteName: 'Directory',
+        initialRouteName: 'Venue',
         navigationOptions: {
             headerStyle: {
                 backgroundColor: '#002633'
@@ -61,7 +61,7 @@ const DirectoryNavigator = createStackNavigator(
             }
         }//end DirectoryNavigator
     }
-);//end DirectoryNavigator
+);//end VenueNavigator
 
 const AppetizerNavigator = createStackNavigator(
     {
@@ -188,12 +188,26 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },//end Home screen navigation options
-        Directory: {
-            screen: DirectoryNavigator,
+        RSVP: {
+            screen: RSVPNavigator,
+            navigationOptions: {
+                drawerLabel: 'RSVP',
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='star'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },//end RSVP screen navigation options        
+        Venue: {
+            screen: VenueNavigator,
             navigationOptions: {
                 drawerIcon: ({tintColor}) => (
                     <Icon
-                        name='list'
+                        name='picture-o'
                         type='font-awesome'
                         size={24}
                         color={tintColor}
@@ -215,20 +229,6 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },//end FAQ screen navigation options
-        RSVP: {
-            screen: RSVPNavigator,
-            navigationOptions: {
-                drawerLabel: 'RSVP',
-                drawerIcon: ({tintColor}) => (
-                    <Icon
-                        name='star'
-                        type='font-awesome'
-                        size={24}
-                        color={tintColor}
-                    />
-                )
-            }
-        },//end RSVP screen navigation options
         About: {
             screen: AppetizerNavigator,
             navigationOptions: {
