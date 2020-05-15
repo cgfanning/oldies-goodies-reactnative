@@ -4,7 +4,6 @@ export const APPETIZERS = [
         name: "Wings",
         price: "$11.00",
         image: "./images/wings.jpg",
-        featured: true,
         description: "Delicious, beer-battered wings"
     },
     {
@@ -12,7 +11,6 @@ export const APPETIZERS = [
         name: "Crispy Calamari",
         price: "$14.00",
         image: "./images/calamari.jpg",
-        featured: false,
         description: "Deep fried calamari rings served with Thai chili sauce"
     },
     {
@@ -20,7 +18,6 @@ export const APPETIZERS = [
         name: "Mozzarella Sticks",
         price: "$9.00",
         image: "./images/mozarellasticks.jpg",
-        featured: false,
         description: "Golden fried sticks of mozarella cheese"
     },
     {
@@ -28,7 +25,6 @@ export const APPETIZERS = [
         name: "Margherita Pizza",
         price: "$18.00",
         image: "./images/pizzamargherita.jpg",
-        featured: false,
         description: "Fresh mozzarella, tomato, and fresh basil"
     }
 ];
